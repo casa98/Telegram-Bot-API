@@ -5,6 +5,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 from auth import token
 from langdetect import detect
+from telegram import ParseMode
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
@@ -33,7 +34,7 @@ def extract_info(text):
 
     if(text_words > 6): # At least 8 words
         lang = detect(text)
-        finalText += '\nYour text is probably written in {} language'.format(lang)
+        finalText += '\n<b>Your text is probably written in {} language</b>'.format(lang)
     return finalText
 
 
@@ -61,7 +62,7 @@ def echo(bot, update):
     text = update.message.text
     finalText = extract_info(text)
 
-    update.message.reply_text('Your entered text contains:\n\n'+finalText)
+    update.message.reply_text('<i>Your entered text contains:</i>\n\n'+finalText, parse_mode=ParseMode.HTML)
 
 """Start the bot."""
 # Create the EventHandler and pass it your bot's token.
