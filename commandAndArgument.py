@@ -3,10 +3,13 @@ from telegram.ext import InlineQueryHandler
 from telegram.ext import Updater
 from telegram.ext import CommandHandler, MessageHandler
 from auth import token
+import telegram
 import logging
 from telegram.ext.filters import Filters
 
 updater = Updater(token=token, use_context=True)
+
+job = updater.job_queue
 
 dispatcher = updater.dispatcher
 
@@ -46,6 +49,13 @@ def inline_caps(update, context):
         )
     )
     context.bot.answer_inline_query(update.inline_query.id, results)
+
+
+def callback_minute(context: telegram.ext.CallbackContext):
+    context.bot.send_message(chat_id='@fanzinemedia', text='Mama quéeeeeeeeeeeee\nMoto?')
+
+
+job_minute = job.run_repeating(callback_minute, interval=30, first=0)
 
 
 def unknown(update, context):
