@@ -13,3 +13,7 @@ This code shows how to implement *Reply Keyboard Markup*. This keyboard consist 
 
 ### `inlineKeyboardMarkup.py` file:
 This file creates an *Inline Keyboard markup* which is displayed below a text
+
+### `chatAction.py` file:
+Esthetic things, bots can simulate they're doing something while showing a message like... *typing*, *sending a file*, etc.
+
