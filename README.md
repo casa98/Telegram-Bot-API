@@ -7,3 +7,6 @@ E.g:
 ### `extractMessageInfo.py` file:
 What this code does is to take a message (text) as input and gets some info of this message. Some info is length, count words, vowels, etc.
 If message is larger than seven words, it'll also say in which language the text in written in.
+
+### `replyKeyboardMarkup.py` file:
+This code shows how to implement *Reply Keyboard Markup*. This keyboard consist of several buttons which diplay its associated number when pressed. To remove the keyboard, execute the `/remove` command.
