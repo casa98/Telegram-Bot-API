@@ -10,3 +10,6 @@ If message is larger than seven words, it'll also say in which language the text
 
 ### `replyKeyboardMarkup.py` file:
 This code shows how to implement *Reply Keyboard Markup*. This keyboard consist of several buttons which diplay its associated number when pressed. To remove the keyboard, execute the `/remove` command.
+
+### `inlineKeyboardMarkup.py` file:
+This file creates an *Inline Keyboard markup* which is displayed below a text
